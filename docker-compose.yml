@@ -18,7 +18,7 @@ services:
     networks:
       - backend-network
 
-  # 2. Backend API Node.js
+  # 2. Backend API Python
   api:
     build: ./api
     container_name: docker_api
@@ -29,7 +29,7 @@ services:
       DB_PASSWORD: root
       DB_NAME: app_db
     ports:
-      - "3000"
+      - "5000"
     depends_on:
       - db
     networks:
