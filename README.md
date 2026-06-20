@@ -2,11 +2,11 @@
 
 Este é um projeto de gerenciamento de usuários em contêineres utilizando Docker e Docker Compose. A aplicação possui uma arquitetura baseada em microsserviços, onde cada componente roda em seu próprio contêiner isolado, comunicando-se por meio de redes virtuais do Docker.
 
-A API do backend foi desenvolvida em **Python com o framework Flask**, e o frontend estático é servido por um servidor Nginx dedicado, com todas as comunicações centralizadas por um **Proxy Reverso** (também Nginx).
+A API do backend foi desenvolvida em **Python com o framework Flask**, e o frontend estático é servido por um servidor Nginx dedicado, com todas as comunicações centralizadas por um **Proxy Reverso** (Nginx).
 
 ---
 
-## 🛠️ Arquitetura do Sistema
+## Arquitetura do Sistema
 
 A infraestrutura é composta por 4 serviços principais:
 
@@ -28,11 +28,11 @@ A infraestrutura é composta por 4 serviços principais:
 4. **Banco de Dados (MySQL):**
    - Banco de dados MySQL 8.0 rodando na porta interna `3306`.
    - Utiliza um volume persistente (`db_data`) para garantir que os dados não sejam perdidos quando os contêineres forem reiniciados ou removidos.
-   - Inicializado automaticamente na primeira execução com o script [init.sql](file:///c:/Users/vitor/Documents/2026/Systems%20Analysis%20And%20Development/4AN/New%20Technologies/docker-project/init.sql).
+   - Inicializado automaticamente na primeira execução com o script `init.sql`.
 
 ---
 
-## 🔌 Descrição das Portas Utilizadas
+## Descrição das Portas Utilizadas
 
 | Serviço / Container | Porta Interna (Container) | Porta Externa (Host) | Finalidade |
 | :--- | :--- | :--- | :--- |
@@ -55,7 +55,7 @@ Para executar este projeto, você precisará ter instalado em sua máquina:
 ### 1. Clonar ou Acessar a Pasta do Projeto
 Certifique-se de estar na raiz do diretório do projeto no terminal:
 ```bash
-cd "/c:/Users/vitor/Documents/2026/Systems Analysis And Development/4AN/New Technologies/docker-project"
+cd /caminho/para/o/projeto
 ```
 
 ### 2. Construir e Iniciar os Contêineres
