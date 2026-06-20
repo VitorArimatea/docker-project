@@ -1,13 +1,12 @@
-FROM node:20-alpine
+FROM python:3.10-slim
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
-
-RUN npm install
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 5000
 
-CMD ["npm", "start"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
