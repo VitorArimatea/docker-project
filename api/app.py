@@ -36,7 +36,7 @@ def create_user():
     connection = get_db_connection()
     try:
         with connection.cursor() as cursor:
-            # Check for duplicate email (to match the previous Node.js behavior)
+            # Check for duplicate email to avoid conflict
             cursor.execute('SELECT id FROM users WHERE email = %s', (email,))
             if cursor.fetchone():
                 return jsonify({'error': 'Email already exists'}), 409
